@@ -552,3 +552,37 @@ header{
 .zhuanye  .footer-head .inner a:hover{
     text-decoration:underline;
 }
+
+/*pages*/
+#pages{
+    width:28px;
+    height:80px;
+    position:fixed;
+    right:17px;
+    top:42%;
+    z-index:500;
+}
+#pages a{
+    width:10px;
+    height:10px;
+    margin:10px;
+    position:relative;
+    border-radius:50%;
+    border:1px solid #000;
+    display:block;
+}
+#pages a b{
+    font-weight: normal;
+    position:absolute;
+    right:20px;
+    top:-2px;
+    display:block;
+    width:220px;
+    text-align:right;
+    color:#fff;
+    font-size:14px;
+    opacity:0;
+}
+.active{
+    background:#333;
+}
