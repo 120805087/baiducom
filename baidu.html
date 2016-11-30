@@ -10,11 +10,13 @@
     <link rel="stylesheet" href="css/baidu.css">
     <script src="js/zepto.js"></script>
     <script src="js/touch.js"></script>
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="js/jquery.fullPage.min.js"></script>
     <script src="js/baidu.js"></script>
 </head>
 <body>
 <header>
-    <div class="header">
+    <div class="header max-header">
         <a href="javascript:;" class="login"></a>
         <a href="javascript:;" class="index">首页</a>
         <a href="javascript:;" class="index">产品用户</a>
@@ -25,6 +27,22 @@
         <a href="javascript:;" class="last">百度司南</a>
         <a href="javascript:;" class="last">联系我们</a>
         <a href="javascript:;" class="last">申请试用</a>
+    </div>
+    <div class="header min-header">
+        <a href="javascript:;" class="login"></a>
+        <div class="menu-option">
+            <span class="menu-option-tline"></span>
+            <span class="menu-option-bline"></span>
+        </div>
+        <div class="menu">
+            <a href="javascript:;" class="index">首页</a>
+            <a href="javascript:;" class="index">产品用户</a>
+            <a href="javascript:;" class="index">用户版</a>
+            <a href="javascript:;" class="last">手机客户端</a>
+            <a href="javascript:;" class="last">百度司南</a>
+            <a href="javascript:;" class="last">联系我们</a>
+            <a href="javascript:;" class="last">申请试用</a>
+        </div>
     </div>
 </header>
 <aside id="pages">
@@ -42,13 +60,13 @@
     </a>
 </aside>
 <div id="fullpage">
-    <section class="formArea">
+    <section class="section formArea">
         <div class="top"></div>
-        <div class="inner">
-            <div class="content">
-                <div class="content-title"></div>
-                <div class="feiji"></div>
-                <div class="ship"></div>
+        <div class="inner container-fluid">
+            <div class="content row">
+                <div class="content-title col-s-hide"></div>
+                <div class="feiji col-s-hide"></div>
+                <div class="ship col-s-hide"></div>
                 <div class="formBox">
                     <div class="form-info">
                         <div class="info-username">
@@ -89,8 +107,8 @@
             </div>
         </div>
     </section>
-    <section class="tableCell">
-        <div class="content">
+    <section class="section tableCell container-fluid">
+        <div class="content row">
             <div class="titleArea">
                 <div class="title">
                     <h3 class="linxian"></h3>
@@ -104,7 +122,7 @@
                     </div>
                 </div>
             </div>
-            <div class="image">
+            <div class="image col-s-hide">
             </div>
         </div>
         <div class="bottom">
@@ -116,9 +134,9 @@
             <a href="javascript:;" class="next-pages"></a>
         </div>
     </section>
-    <section class="tableCell quanmian">
+    <section class="section tableCell quanmian">
         <div class="content">
-            <div class="top">
+            <div class="top col-s-hide">
                 <div class="square1 square-1"></div>
                 <div class="square1 square-2"></div>
                 <div class="square1 square-3"></div>
@@ -138,7 +156,7 @@
                     </div>
                 </div>
             </div>
-            <div class="image image-quan">
+            <div class="image image-quan col-s-hide">
             </div>
         </div>
         <div class="footer-head">
@@ -147,10 +165,10 @@
             <a href="javascript:;" class="next-pages"></a>
         </div>
     </section>
-    <section class="tableCell zhuanye">
+    <section class="section tableCell zhuanye">
         <div class="content">
-            <div class="top"></div>
-            <div class="titleArea" style="top:80px">
+            <div class="top col-s-hide"></div>
+            <div class="titleArea">
                 <div class="title">
                     <h3 class="zhuanye"></h3>
                     <div class="text">
@@ -163,7 +181,7 @@
                     </div>
                 </div>
             </div>
-            <div class="image image-zhuan">
+            <div class="image image-zhuan col-s-hide">
             </div>
         </div>
         <div class="footer-head">

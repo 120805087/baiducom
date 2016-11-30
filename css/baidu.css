@@ -36,27 +36,6 @@ header{
 .header .login{
     margin-top:10px;
 }
-.header .index{
-    margin-top:15px;
-    align-self: center;
-}
-.header .index:hover{
-    color:#67CBF8;
-}
-.header .last{
-    font-size:12px;
-    margin-bottom:10px;
-    align-self: flex-end;
-}
-.header a:nth-of-type(2){
-    margin-left:30px;
-}
-.header a:nth-of-type(5){
-    margin-left:130px;
-}
-.header a:last-of-type{
-    color:#FFDA28;
-}
 #icon{
     width:32px;
     height:25px;
@@ -64,7 +43,73 @@ header{
     background-position:-88px -154px;
     display:inline-block;
 }
-
+.max-header{
+    display:none;
+}
+.min-header{
+    position:relative;
+}
+.menu-option{
+    width:30px;
+    height:40px;
+    margin:10px 20px 0 0;
+    position:relative;
+    cursor:pointer;
+}
+.menu-option-tline{
+    width:100%;
+    height:2px;
+    position:absolute;
+    left:0;
+    top:10px;
+    background:#fff;
+    transition:transform 0.5s linear;
+}
+.menu-option-bline{
+    width:100%;
+    height:2px;
+    position:absolute;
+    left:0;
+    bottom:10px;
+    background:#fff;
+    transition:transform 0.5s linear;
+}
+/*.menu-option:hover .menu-option-tline{*/
+    /*transform: translate(0,10px) rotate(45deg);*/
+/*}*/
+/*.menu-option:hover .menu-option-bline{*/
+    /*transform:translate(0,-10px) rotate(-45deg);*/
+/*}*/
+.menu{
+    width:100%;
+    position:absolute;
+    left:0;
+    top:60px;
+    z-index:2000;
+    display:none;
+}
+.menu a{
+    display:block;
+    width:100%;
+    line-height:40px;
+    text-align: center;
+    background:rgba(0,0,0,0.7);
+    opacity:0;
+}
+@keyframes flipInX {
+    0%{transform:perspective(400px) rotateX(90deg);
+        opacity:0}
+    40%{transform:perspective(400px) rotateX(-10deg)}
+    70%{transform:perspective(400px) rotateX(10deg)}
+    100%{transform:perspective(400px) rotateX(0deg);
+        opacity:1}
+}
+@keyframes flipOutX{
+    0%{transform:perspective(400px) rotateX(0deg);
+        opacity:1}
+    100%{transform:perspective(400px) rotateX(90deg);
+        opacity:0}
+}
 /*主体*/
 #fullpage{
     width:100%;
@@ -125,7 +170,7 @@ header{
     z-index:1;
 }
 .inner .content{
-    width:1000px;
+    max-width:1000px;
     height:350px;
     margin:0 auto;
     margin-top:-100px;
@@ -157,16 +202,29 @@ header{
     bottom:-103px;
     background:url(../img/ship.png);
     z-index:3;
+    animation:l_to_r3 1s linear;
+}
+@keyframes l_to_r3 {
+    0%{
+        transform:translate(-10px,0);
+    }
+    100%{
+        transform:translate(0px,0);
+    }
 }
 .formBox{
     width:340px;
     height:305px;
     padding-top:26px;
     position:absolute;
-    right:0;
-    top:20px;
+    /*right:0;*/
+    /*top:20px;*/
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
     background:#4EBFFC;
     border-radius:5px;
+    z-index:1000;
 }
 .form-info{
     padding:0 20px;
@@ -203,6 +261,7 @@ header{
     box-sizing:content-box;
     font-size:14px;
     font-family:"Microsoft Yahei";
+    outline:none;
 }
 .vilibi input{
     width:122px;
@@ -335,18 +394,22 @@ header{
     }
 }
 /*第二屏*/
+.tableCell{
+    float:left;
+}
 .tableCell .content{
-    width:1000px;
+    max-width:1000px;
     margin:0 auto;
     position:relative;
-    top:100px;
-    height:600px;
+    height:100%;
 }
 .tableCell .content .titleArea{
     width:500px;
     position:absolute;
-    left:0;
-    top:130px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    transition:margin-left 1s linear,opacity 1s linear;
 }
 .titleArea .linxian,.titleArea .quanmian,.titleArea .zhuanye{
     width:66px;
@@ -379,9 +442,11 @@ header{
     width:444px;
     height:427px;
     background:url(../img/brain.png) ;
+    transition:transform 1s linear,opacity 1s linear;
 }
 .tableCell .bottom{
-    width:1000px;
+    max-width:1000px;
+    height:88px;
     position:absolute;
     left:0;
     bottom:0;
@@ -427,8 +492,11 @@ header{
     height:26px;
     display:block;
     position:absolute;
-    left:485px;
-    top:-60px;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    margin:auto;
     background:url(../img/arrow.png);
     z-index:10;
     animation:t_to_b3 1s ease infinite;
@@ -538,7 +606,7 @@ header{
 }
 .zhuanye  .footer-head .inner{
     margin:0 auto;
-    width:1000px;
+    max-width:1000px;
     line-height:80px;
     text-align:center;
     font-size:12px;
@@ -585,4 +653,54 @@ header{
 }
 .active{
     background:#333;
+}
+
+@media screen and (min-width: 1000px) {
+    .max-header{
+        display:flex;
+    }
+    .header .index{
+        margin-top:15px;
+        align-self: center;
+    }
+    .header .last{
+        font-size:12px;
+        margin-bottom:10px;
+        align-self: flex-end;
+    }
+    .header .index:hover{
+        color:#67CBF8;
+    }
+    .header a:nth-of-type(2){
+        margin-left:30px;
+    }
+    .header a:nth-of-type(5){
+        margin-left:130px;
+    }
+    .header a:last-of-type{
+        color:#FFDA28;
+    }
+    .min-header{
+        display:none;
+    }
+    .formBox{
+        left:840px;
+        top:140px;
+    }
+    .tableCell .content{
+        margin-top:100px;
+    }
+    .tableCell .content .titleArea{
+        left:0;
+        top:80px;
+        transform:translate(0,0);
+        opacity:0;
+        margin-left:-150px;
+        transition:margin-left 1s linear,opacity 1s linear;
+    }
+    .image{
+        transform:translate(150px,0);
+        opacity: 0;
+        transition:transform 1s linear,opacity 1s linear;
+    }
 }
